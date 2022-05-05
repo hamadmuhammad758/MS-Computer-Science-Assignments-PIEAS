@@ -1,0 +1,132 @@
+autostart = False
+version = 0.8.7
+[127.0.0.1:7202]
+    workingdir = C:\Users\Hammad\AppData\Local\Temp
+    udp = 10201
+    [[7200]]
+        image = C:\Users\Hammad\Downloads\c7200-jk9s-mz.124-13b.image
+        idlepc = 0x608724c0
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2108
+        aux = 2508
+        cnfg = configs\R1.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = R2 f0/1
+        f0/1 = R3 f0/0
+        slot1 = PA-FE-TX
+        f1/0 = nio_gen_eth:\device\npf_{0d61a6c2-c22f-4c57-8d3b-6b0c1cb04410}
+        x = -19.0
+        y = 40.0
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = C:\Users\Hammad\AppData\Local\Temp
+    udp = 10001
+    [[7200]]
+        image = C:\Users\Hammad\Downloads\c7200-jk9s-mz.124-13b.image
+        idlepc = 0x608724c0
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R2]]
+        console = 2106
+        aux = 2506
+        cnfg = configs\R2.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = R3 f0/1
+        f0/1 = R1 f0/0
+        x = 108.0
+        y = -121.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\Hammad\AppData\Local\Temp
+    udp = 10101
+    [[7200]]
+        image = C:\Users\Hammad\Downloads\c7200-jk9s-mz.124-13b.image
+        idlepc = 0x608724c0
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R3]]
+        console = 2107
+        aux = 2507
+        cnfg = configs\R3.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = R1 f0/1
+        f0/1 = R2 f0/0
+        x = 259.0
+        y = 44.0
+        z = 1.0
+        hx = 25.5
+        hy = 43.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "192.168.5.2"
+        x = 22.0
+        y = -106.0
+    [[NOTE 2]]
+        text = "fa0/1"
+        x = 60.0
+        y = -87.0
+    [[NOTE 3]]
+        text = "192.168.10.2"
+        x = 179.0
+        y = -105.0
+    [[NOTE 4]]
+        text = "fa0/0"
+        x = 185.0
+        y = -83.0
+    [[NOTE 5]]
+        text = "fa0/0"
+        x = -1.0
+        y = 2.0
+    [[NOTE 6]]
+        text = "192.168.5.1"
+        x = -27.0
+        y = -17.0
+    [[NOTE 7]]
+        text = "fa0/1"
+        x = 44.0
+        y = 64.0
+    [[NOTE 8]]
+        text = "192.168.15.1"
+        x = 40.0
+        y = 80.0
+    [[NOTE 9]]
+        text = "fa0/0"
+        x = 205.0
+        y = 67.0
+    [[NOTE 10]]
+        text = "192.168.10.1"
+        x = 270.0
+        y = 7.0
+    [[NOTE 11]]
+        text = "192.168.2.1"
+        x = -114.0
+        y = 63.0
+    [[NOTE 12]]
+        text = "192.168.15.2"
+        x = 188.0
+        y = 84.0
+    [[NOTE 13]]
+        text = "fa0/1"
+        x = 274.0
+        y = 22.0
+    [[NOTE 14]]
+        text = "MS loopback interface"
+        x = -303.0
+        y = 93.0
+    [[NOTE 15]]
+        text = "fa1/0"
+        x = -80.0
+        y = 35.0
+    [[NOTE 16]]
+        text = "192.168.2.2"
+        x = -261.0
+        y = 63.0
+    [[Cloud Host1]]
+        symbol = Host
+        x = -322.5
+        y = 33.5
+        z = 1.0
+        connections = R1:f1/0:nio_gen_eth:\device\npf_{0d61a6c2-c22f-4c57-8d3b-6b0c1cb04410}

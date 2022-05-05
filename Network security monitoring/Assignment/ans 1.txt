@@ -1,0 +1,668 @@
+﻿sudo sostat
+
+=========================================================================
+Service Status
+=========================================================================
+Status: securityonion
+  * sguil server[  OK  ]
+Status: HIDS
+  * ossec_agent (sguil)[  OK  ]
+Status: Bro
+Name         Type       Host          Status    Pid    Started
+bro          standalone localhost     running   5460   07 Apr 12:01:44
+Status: hamad-virtualbox-eth0
+  * netsniff-ng (full packet data)[  OK  ]
+  * pcap_agent (sguil)[  OK  ]
+  * snort_agent-1 (sguil)[  OK  ]
+  * snort-1 (alert data)[  OK  ]
+  * barnyard2-1 (spooler, unified2 format)[  OK  ]
+
+=========================================================================
+Interface Status
+=========================================================================
+docker0   Link encap:Ethernet  HWaddr 02:42:97:15:9b:a6  
+          inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+eth0      Link encap:Ethernet  HWaddr 08:00:27:69:2b:c0  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe69:2bc0/64 Scope:Link
+          UP BROADCAST RUNNING PROMISC MULTICAST  MTU:1500  Metric:1
+          RX packets:24499 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:12009 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:19706490 (19.7 MB)  TX bytes:731473 (731.4 KB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:713 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:713 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:123167 (123.1 KB)  TX bytes:123167 (123.1 KB)
+
+
+=========================================================================
+Link Statistics
+=========================================================================
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX: bytes  packets  errors  dropped overrun mcast   
+    123167     713      0       0       0       0      
+    RX errors: length  crc     frame   fifo    missed
+               0        0       0       0       0      
+    TX: bytes  packets  errors  dropped carrier collsns 
+    123167     713      0       0       0       0      
+    TX errors: aborted fifo    window  heartbeat
+               0        0       0       0      
+2: eth0: <BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:69:2b:c0 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast   
+    19706490   24499    0       0       0       0      
+    RX errors: length  crc     frame   fifo    missed
+               0        0       0       0       0      
+    TX: bytes  packets  errors  dropped carrier collsns 
+    731473     12009    0       0       0       0      
+    TX errors: aborted fifo    window  heartbeat
+               0        0       0       0      
+3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether 02:42:97:15:9b:a6 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast   
+    0          0        0       0       0       0      
+    RX errors: length  crc     frame   fifo    missed
+               0        0       0       0       0      
+    TX: bytes  packets  errors  dropped carrier collsns 
+    0          0        0       0       0       0      
+    TX errors: aborted fifo    window  heartbeat
+               0        0       0       0      
+
+=========================================================================
+Disk Usage
+=========================================================================
+Filesystem      Size  Used Avail Use% Mounted on
+udev            479M  4.0K  479M   1% /dev
+tmpfs           100M  956K   99M   1% /run
+/dev/sda1       8.8G  7.2G  1.2G  87% /
+none            4.0K     0  4.0K   0% /sys/fs/cgroup
+none            5.0M     0  5.0M   0% /run/lock
+none            497M   76K  497M   1% /run/shm
+none            100M   24K  100M   1% /run/user
+SharedFolder    250G  131G  120G  53% /media/sf_SharedFolder
+
+=========================================================================
+Network Sockets
+=========================================================================
+COMMAND    PID         USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+avahi-dae  872        avahi   12u  IPv4   9988      0t0  UDP *:5353 
+avahi-dae  872        avahi   13u  IPv6   9989      0t0  UDP *:5353 
+avahi-dae  872        avahi   14u  IPv4   9990      0t0  UDP *:49398 
+avahi-dae  872        avahi   15u  IPv6   9991      0t0  UDP *:51587 
+dhclient   927         root    5u  IPv4   9817      0t0  UDP *:68 
+dhclient   927         root   20u  IPv4   9772      0t0  UDP *:15852 
+dhclient   927         root   21u  IPv6   9773      0t0  UDP *:39718 
+sshd      1303         root    3u  IPv4  11223      0t0  TCP *:22 (LISTEN)
+sshd      1303         root    4u  IPv6  11225      0t0  TCP *:22 (LISTEN)
+cups-brow 1360         root    6u  IPv6  19734      0t0  TCP [::1]:38152->[::1]:631 (CLOSE_WAIT)
+cups-brow 1360         root    8u  IPv4  19759      0t0  UDP *:631 
+ntpd      2082          ntp   16u  IPv4  15366      0t0  UDP *:123 
+ntpd      2082          ntp   17u  IPv6  15375      0t0  UDP *:123 
+ntpd      2082          ntp   18u  IPv4  15381      0t0  UDP 127.0.0.1:123 
+ntpd      2082          ntp   19u  IPv4  15382      0t0  UDP 10.0.2.15:123 
+ntpd      2082          ntp   20u  IPv4  15383      0t0  UDP 172.17.0.1:123 
+ntpd      2082          ntp   21u  IPv6  15384      0t0  UDP [::1]:123 
+ntpd      2082          ntp   22u  IPv6  15385      0t0  UDP [fe80::a00:27ff:fe69:2bc0]:123 
+/usr/sbin 2161         root    5u  IPv6  15541      0t0  TCP *:443 (LISTEN)
+/usr/sbin 2161         root    7u  IPv6  30683      0t0  TCP *:3154 (LISTEN)
+cupsd     3011         root   10u  IPv6  19728      0t0  TCP [::1]:631 (LISTEN)
+cupsd     3011         root   11u  IPv4  19729      0t0  TCP 127.0.0.1:631 (LISTEN)
+ossec-csy 3371       ossecm    5u  IPv4  20644      0t0  UDP 127.0.0.1:35263->127.0.0.1:514 
+mysqld    3579        mysql   10u  IPv4  20978      0t0  TCP 127.0.0.1:3306 (LISTEN)
+tclsh     5348        sguil   13u  IPv4  24185      0t0  TCP *:7734 (LISTEN)
+tclsh     5348        sguil   14u  IPv6  24186      0t0  TCP *:7734 (LISTEN)
+tclsh     5348        sguil   15u  IPv4  24189      0t0  TCP *:7736 (LISTEN)
+tclsh     5348        sguil   16u  IPv6  24190      0t0  TCP *:7736 (LISTEN)
+tclsh     5348        sguil   17u  IPv4  37146      0t0  TCP 127.0.0.1:7736->127.0.0.1:41246 (ESTABLISHED)
+tclsh     5348        sguil   18u  IPv4  38263      0t0  TCP 127.0.0.1:7736->127.0.0.1:40179 (ESTABLISHED)
+tclsh     5348        sguil   19u  IPv4  26800      0t0  TCP 127.0.0.1:7736->127.0.0.1:39089 (ESTABLISHED)
+bro       5460        sguil    4u  IPv4  24547      0t0  UDP 10.0.2.15:55984->192.168.1.1:53 
+bro       5484        sguil    0u  IPv4  24640      0t0  TCP *:47760 (LISTEN)
+bro       5484        sguil    1u  IPv6  24641      0t0  TCP *:47760 (LISTEN)
+bro       5484        sguil    4u  IPv4  24547      0t0  UDP 10.0.2.15:55984->192.168.1.1:53 
+barnyard2 6204        sguil    3u  IPv4  29897      0t0  TCP 127.0.0.1:33340->127.0.0.1:8001 (CLOSE_WAIT)
+tclsh     6326        sguil    3u  IPv4  26799      0t0  TCP 127.0.0.1:39089->127.0.0.1:7736 (ESTABLISHED)
+searchd   6429 sphinxsearch    7u  IPv4  27881      0t0  TCP *:9306 (LISTEN)
+searchd   6429 sphinxsearch    8u  IPv4  27882      0t0  TCP *:9312 (LISTEN)
+syslog-ng 6445         root    9u  IPv4  29298      0t0  TCP *:514 (LISTEN)
+syslog-ng 6445         root   10u  IPv4  29299      0t0  UDP *:514 
+tclsh     8126        sguil    3u  IPv4  37145      0t0  TCP 127.0.0.1:41246->127.0.0.1:7736 (ESTABLISHED)
+tclsh     8247        sguil    6u  IPv4  39313      0t0  TCP 10.0.2.15:51294->202.12.29.205:21 (ESTABLISHED)
+tclsh     8247        sguil    7u  IPv4  39580      0t0  TCP 10.0.2.15:37620->202.12.29.205:49555 (ESTABLISHED)
+/usr/sbin 8253     www-data    5u  IPv6  15541      0t0  TCP *:443 (LISTEN)
+/usr/sbin 8253     www-data    7u  IPv6  30683      0t0  TCP *:3154 (LISTEN)
+/usr/sbin 8254     www-data    5u  IPv6  15541      0t0  TCP *:443 (LISTEN)
+/usr/sbin 8254     www-data    7u  IPv6  30683      0t0  TCP *:3154 (LISTEN)
+/usr/sbin 8255     www-data    5u  IPv6  15541      0t0  TCP *:443 (LISTEN)
+/usr/sbin 8255     www-data    7u  IPv6  30683      0t0  TCP *:3154 (LISTEN)
+/usr/sbin 8256     www-data    5u  IPv6  15541      0t0  TCP *:443 (LISTEN)
+/usr/sbin 8256     www-data    7u  IPv6  30683      0t0  TCP *:3154 (LISTEN)
+/usr/sbin 8257     www-data    5u  IPv6  15541      0t0  TCP *:443 (LISTEN)
+/usr/sbin 8257     www-data    7u  IPv6  30683      0t0  TCP *:3154 (LISTEN)
+tclsh     8382        sguil    3u  IPv4  38262      0t0  TCP 127.0.0.1:40179->127.0.0.1:7736 (ESTABLISHED)
+tclsh     8382        sguil    4u  IPv4  38264      0t0  TCP 127.0.0.1:8001 (LISTEN)
+
+=========================================================================
+IDS Rules Update
+=========================================================================
+هفته اپريل  7 12:01:15 UTC 2018
+Backing up current local_rules.xml file.
+Backing up current local_rules.xml file.
+Cleaning up local_rules.xml backup files older than 30 days.
+Cleaning up local_rules.xml backup files older than 30 days.
+Backing up current downloaded.rules file before it gets overwritten.
+Backing up current downloaded.rules file before it gets overwritten.
+Cleaning up downloaded.rules backup files older than 30 days.
+Cleaning up downloaded.rules backup files older than 30 days.
+Backing up current local.rules file before it gets overwritten.
+Backing up current local.rules file before it gets overwritten.
+Cleaning up local.rules backup files older than 30 days.
+Cleaning up local.rules backup files older than 30 days.
+Running PulledPork.
+Running PulledPork.
+ 
+    https://github.com/shirkdog/pulledpork
+      _____ ____
+     `----,\    )
+      `--==\\  /    PulledPork v0.7.3 - Making signature updates great again!
+       `--==\\/
+     .-~~~~-.Y|\\_  Copyright (C) 2009-2016 JJ Cummings
+  @_/        /  66\_  cummingsj@gmail.com
+    |    \   \   _(")
+     \   /-| ||'--'  Rules give me wings!
+      \_\  \_\\
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Checking latest MD5 for emerging.rules.tar.gz....
+Rules tarball download of emerging.rules.tar.gz....
+	They Match
+	Done!
+Prepping rules from emerging.rules.tar.gz for work....
+	Done!
+Reading rules...
+Generating Stub Rules....
+	Done
+Reading rules...
+Reading rules...
+Modifying Sids....
+	Done!
+Processing /etc/nsm/pulledpork/enablesid.conf....
+	Modified 0 rules
+	Skipped 0 rules (already disabled)
+	Done
+Processing /etc/nsm/pulledpork/dropsid.conf....
+	Modified 0 rules
+	Skipped 0 rules (already disabled)
+	Done
+Processing /etc/nsm/pulledpork/disablesid.conf....
+	Modified 0 rules
+	Skipped 0 rules (already disabled)
+	Done
+Setting Flowbit State....
+	Enabled 144 flowbits
+	Enabled 1 flowbits
+	Done
+Writing /etc/nsm/rules/downloaded.rules....
+	Done
+Generating sid-msg.map....
+	Done
+Writing v1 /etc/nsm/rules/sid-msg.map....
+	Done
+Writing /var/log/nsm/sid_changes.log....
+	Done
+Rule Stats...
+	New:-------5666
+	Deleted:---182
+	Enabled Rules:----19622
+	Dropped Rules:----0
+	Disabled Rules:---6982
+	Total Rules:------26604
+No IP Blacklist Changes
+Done
+Please review /var/log/nsm/sid_changes.log for additional details
+Fly Piggy Fly!
+ 
+    https://github.com/shirkdog/pulledpork
+      _____ ____
+     `----,\    )
+      `--==\\  /    PulledPork v0.7.3 - Making signature updates great again!
+       `--==\\/
+     .-~~~~-.Y|\\_  Copyright (C) 2009-2016 JJ Cummings
+  @_/        /  66\_  cummingsj@gmail.com
+    |    \   \   _(")
+     \   /-| ||'--'  Rules give me wings!
+      \_\  \_\\
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Checking latest MD5 for emerging.rules.tar.gz....
+Rules tarball download of emerging.rules.tar.gz....
+	They Match
+	Done!
+Prepping rules from emerging.rules.tar.gz for work....
+	Done!
+Reading rules...
+Generating Stub Rules....
+	Done
+Reading rules...
+Reading rules...
+Modifying Sids....
+	Done!
+Processing /etc/nsm/pulledpork/enablesid.conf....
+	Modified 0 rules
+	Skipped 0 rules (already disabled)
+	Done
+Processing /etc/nsm/pulledpork/dropsid.conf....
+	Modified 0 rules
+	Skipped 0 rules (already disabled)
+	Done
+Processing /etc/nsm/pulledpork/disablesid.conf....
+	Modified 0 rules
+	Skipped 0 rules (already disabled)
+	Done
+Setting Flowbit State....
+	Enabled 144 flowbits
+	Enabled 1 flowbits
+	Done
+Writing /etc/nsm/rules/downloaded.rules....
+	Done
+Generating sid-msg.map....
+	Done
+Writing v1 /etc/nsm/rules/sid-msg.map....
+	Done
+Writing /var/log/nsm/sid_changes.log....
+	Done
+Rule Stats...
+	New:-------5666
+	Deleted:---182
+	Enabled Rules:----19622
+	Dropped Rules:----0
+	Disabled Rules:---6982
+	Total Rules:------26604
+No IP Blacklist Changes
+Done
+Please review /var/log/nsm/sid_changes.log for additional details
+Fly Piggy Fly!
+
+=========================================================================
+CPU Usage
+=========================================================================
+Load average for the last 1, 5, and 15 minutes:
+1.66 3.07 1.68
+Processing units: 1
+If load average is higher than processing units,
+then tune until load average is lower than processing units.
+
+top - 12:07:42 up 10 min,  2 users,  load average: 1.66, 3.07, 1.68
+Tasks: 200 total,   2 running, 198 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 22.9 us,  5.4 sy,  0.9 ni, 41.3 id, 28.4 wa,  0.0 hi,  1.0 si,  0.0 st
+KiB Mem:   1016228 total,   860364 used,   155864 free,     6656 buffers
+KiB Swap:  1046524 total,   641108 used,   405416 free.   148316 cached Mem
+
+%CPU %MEM COMMAND
+13.5  4.2 /opt/bro/bin/bro -i eth0 -U .status -p broctl -p broctl-live -p standalone -p local -p bro local.bro broctl broctl/standalone broctl/auto
+ 7.1  3.3 snort -c /etc/nsm/hamad-virtualbox-eth0/snort.conf -u sguil -g sguil -i eth0 -l /nsm/sensor_data/hamad-virtualbox-eth0/snort-1 --perfmon-file /nsm/sensor_data/hamad-virtualbox-eth0/snort-1.stats -U --snaplen 1524
+ 7.1  0.0 barnyard2 -c /etc/nsm/hamad-virtualbox-eth0/barnyard2-1.conf -u sguil -g sguil -d /nsm/sensor_data/hamad-virtualbox-eth0/snort-1 -f snort.unified2 -w /etc/nsm/hamad-virtualbox-eth0/barnyard2.waldo-1 -i hamad-virtualbox-eth0-1 -U
+ 1.0  0.7 tclsh ./ip2c.tcl
+ 0.9  3.4 perl /opt/elsa/node/elsa.pl -c /etc/elsa_node.conf
+ 0.8 12.3 /usr/sbin/apache2 -k start
+ 0.8 18.8 /usr/bin/searchd --nodetach
+ 0.5  1.7 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+ 0.5  1.9 /usr/sbin/mysqld
+ 0.4  1.6 xfce4-terminal
+ 0.3  0.2 /sbin/init
+ 0.2  0.0 [kswapd0]
+ 0.2  1.1 /usr/bin/dockerd --raw-logs
+ 0.2  6.5 netsniff-ng -i eth0 -o /nsm/sensor_data/hamad-virtualbox-eth0/dailylogs/2018-04-07/ --user 1001 --group 1001 -s --prefix snort.log. --verbose --ring-size 64 iB --interval 150 iB -c
+ 0.1  0.5 docker-containerd --config /var/run/docker/containerd/containerd.toml
+ 0.1  0.0 /usr/bin/VBoxClient --draganddrop
+ 0.1  1.0 xfdesktop
+ 0.1  0.0 /var/ossec/bin/ossec-analysisd
+ 0.1  0.1 /var/ossec/bin/ossec-syscheckd
+ 0.1  0.5 tclsh /usr/bin/sguild -c /etc/nsm/securityonion/sguild.conf -a /etc/nsm/securityonion/autocat.conf -g /etc/nsm/securityonion/sguild.queries -A /etc/nsm/securityonion/sguild.access -C /etc/nsm/securityonion/certs
+ 0.0  0.0 [kthreadd]
+ 0.0  0.0 [ksoftirqd/0]
+ 0.0  0.0 [kworker/0:0H]
+ 0.0  0.0 [rcu_sched]
+ 0.0  0.0 [rcu_bh]
+ 0.0  0.0 [migration/0]
+ 0.0  0.0 [watchdog/0]
+ 0.0  0.0 [kdevtmpfs]
+ 0.0  0.0 [netns]
+ 0.0  0.0 [perf]
+ 0.0  0.0 [khungtaskd]
+ 0.0  0.0 [writeback]
+ 0.0  0.0 [ksmd]
+ 0.0  0.0 [khugepaged]
+ 0.0  0.0 [crypto]
+ 0.0  0.0 [kintegrityd]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [kblockd]
+ 0.0  0.0 [ata_sff]
+ 0.0  0.0 [md]
+ 0.0  0.0 [devfreq_wq]
+ 0.0  0.0 [kworker/0:1]
+ 0.0  0.0 [vmstat]
+ 0.0  0.0 [fsnotify_mark]
+ 0.0  0.0 [ecryptfs-kthrea]
+ 0.0  0.0 [kthrotld]
+ 0.0  0.0 [acpi_thermal_pm]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [scsi_eh_0]
+ 0.0  0.0 [scsi_tmf_0]
+ 0.0  0.0 [scsi_eh_1]
+ 0.0  0.0 [scsi_tmf_1]
+ 0.0  0.0 [kworker/u2:2]
+ 0.0  0.0 [ipv6_addrconf]
+ 0.0  0.0 [deferwq]
+ 0.0  0.0 [charger_manager]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [kworker/u2:4]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [kpsmoused]
+ 0.0  0.0 [kworker/0:2]
+ 0.0  0.0 [kworker/0:1H]
+ 0.0  0.0 [scsi_eh_2]
+ 0.0  0.0 [scsi_tmf_2]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [bioset]
+ 0.0  0.0 [jbd2/sda1-8]
+ 0.0  0.0 [ext4-rsv-conver]
+ 0.0  0.0 upstart-udev-bridge --daemon
+ 0.0  0.0 /lib/systemd/systemd-udevd --daemon
+ 0.0  0.0 [kmpathd]
+ 0.0  0.0 [kmpath_handlerd]
+ 0.0  0.0 [iprt-VBoxWQueue]
+ 0.0  0.0 upstart-file-bridge --daemon
+ 0.0  0.0 upstart-socket-bridge --daemon
+ 0.0  0.1 dbus-daemon --system --fork
+ 0.0  0.0 avahi-daemon: running [hamad-VirtualBox.local]
+ 0.0  0.0 /usr/sbin/bluetoothd
+ 0.0  0.0 avahi-daemon: chroot helper
+ 0.0  0.1 /lib/systemd/systemd-logind
+ 0.0  0.0 [krfcommd]
+ 0.0  0.0 dhclient -1 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases eth0
+ 0.0  0.0 /sbin/getty -8 38400 tty4
+ 0.0  0.0 /sbin/getty -8 38400 tty5
+ 0.0  0.0 /sbin/getty -8 38400 tty2
+ 0.0  0.0 /sbin/getty -8 38400 tty3
+ 0.0  0.0 /sbin/getty -8 38400 tty6
+ 0.0  0.0 /usr/sbin/sshd -D
+ 0.0  0.0 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+ 0.0  0.1 lightdm
+ 0.0  0.1 /usr/sbin/cups-browsed
+ 0.0  0.0 [kauditd]
+ 0.0  0.1 /usr/lib/accountsservice/accounts-daemon
+ 0.0  0.2 /usr/lib/policykit-1/polkitd --no-debug
+ 0.0  0.0 /usr/sbin/kerneloops
+ 0.0  0.1 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 117:126
+ 0.0  0.0 /usr/sbin/VBoxService --pidfile /var/run/vboxadd-service.sh
+ 0.0  0.0 /sbin/getty -8 38400 tty1
+ 0.0  0.0 lightdm --session-child 12 21
+ 0.0  0.0 /usr/bin/gnome-keyring-daemon --daemonize --login
+ 0.0  0.1 init --user
+ 0.0  0.0 /usr/bin/VBoxClient --clipboard
+ 0.0  0.0 /usr/bin/VBoxClient --clipboard
+ 0.0  0.0 /usr/bin/VBoxClient --display
+ 0.0  0.0 /usr/bin/VBoxClient --display
+ 0.0  0.0 /usr/bin/VBoxClient --seamless
+ 0.0  0.0 /usr/bin/VBoxClient --seamless
+ 0.0  0.0 /usr/bin/VBoxClient --draganddrop
+ 0.0  0.1 dbus-daemon --fork --session --address=unix:abstract=/tmp/dbus-d0PocVdpsF
+ 0.0  0.0 upstart-event-bridge
+ 0.0  0.0 upstart-dbus-bridge --daemon --session --user --bus-name session
+ 0.0  0.0 upstart-file-bridge --daemon --user
+ 0.0  0.0 upstart-dbus-bridge --daemon --system --user --bus-name system
+ 0.0  0.0 /bin/sh /etc/xdg/xfce4/xinitrc -- /etc/X11/xinit/xserverrc
+ 0.0  0.1 xfce4-session
+ 0.0  0.1 /usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+ 0.0  0.0 /usr/bin/ssh-agent -s
+ 0.0  0.5 xfwm4
+ 0.0  0.6 xfce4-panel
+ 0.0  0.3 Thunar --daemon
+ 0.0  0.2 /usr/bin/python /usr/bin/blueman-applet
+ 0.0  0.3 update-notifier
+ 0.0  0.0 /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+ 0.0  0.2 /usr/bin/python /usr/share/system-config-printer/applet.py
+ 0.0  0.4 nm-applet
+ 0.0  0.4 xfce4-power-manager
+ 0.0  0.0 /usr/lib/at-spi2-core/at-spi-bus-launcher
+ 0.0  0.0 /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
+ 0.0  0.0 /bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+ 0.0  0.0 /usr/bin/pulseaudio --start --log-target=syslog
+ 0.0  0.0 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+ 0.0  0.0 /usr/lib/rtkit/rtkit-daemon
+ 0.0  0.1 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+ 0.0  0.1 light-locker
+ 0.0  0.1 /usr/lib/upower/upowerd
+ 0.0  0.2 xfsettingsd
+ 0.0  0.1 /usr/lib/gvfs/gvfsd
+ 0.0  0.4 /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
+ 0.0  0.0 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+ 0.0  0.1 xfce4-volumed
+ 0.0  1.2 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-1.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libwhiskermenu.so 1 18874400 whiskermenu Whisker Menu Show a menu to easily access installed applications 
+ 0.0  0.3 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-1.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libsystray.so 4 18874401 systray Notification Area Area where notification icons appear 
+ 0.0  0.9 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libindicator-plugin.so 5 18874402 indicator Indicator Plugin Provides a panel area for Unity indicators. Indicators allow applications and system services to display their status and interact with the user. 
+ 0.0  0.0 init --user --startup-event indicator-services-start
+ 0.0  0.0 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+ 0.0  0.0 /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+ 0.0  0.0 /usr/bin/obex-data-server --no-daemon 
+ 0.0  0.2 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+ 0.0  0.1 /usr/lib/udisks2/udisksd --no-debug
+ 0.0  0.2 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+ 0.0  0.0 /usr/lib/gvfs/gvfs-afc-volume-monitor
+ 0.0  0.0 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+ 0.0  0.0 /usr/lib/gvfs/gvfsd-trash --spawner :1.22 /org/gtk/gvfs/exec_spaw/0
+ 0.0  0.0 /usr/sbin/cupsd -f
+ 0.0  0.0 /var/ossec/bin/ossec-csyslogd
+ 0.0  0.0 /var/ossec/bin/ossec-execd
+ 0.0  0.0 /var/ossec/bin/ossec-logcollector
+ 0.0  0.0 /var/ossec/bin/ossec-monitord
+ 0.0  0.0 su - sguil -- /usr/bin/sguild -c /etc/nsm/securityonion/sguild.conf -a /etc/nsm/securityonion/autocat.conf -g /etc/nsm/securityonion/sguild.queries -A /etc/nsm/securityonion/sguild.access -C /etc/nsm/securityonion/certs
+ 0.0  0.1 tclsh /usr/bin/sguild -c /etc/nsm/securityonion/sguild.conf -a /etc/nsm/securityonion/autocat.conf -g /etc/nsm/securityonion/sguild.queries -A /etc/nsm/securityonion/sguild.access -C /etc/nsm/securityonion/certs
+ 0.0  0.0 tclsh /usr/bin/sguild -c /etc/nsm/securityonion/sguild.conf -a /etc/nsm/securityonion/autocat.conf -g /etc/nsm/securityonion/sguild.queries -A /etc/nsm/securityonion/sguild.access -C /etc/nsm/securityonion/certs
+ 0.0  0.0 /bin/bash /opt/bro/share/broctl/scripts/run-bro -1 -i eth0 -U .status -p broctl -p broctl-live -p standalone -p local -p bro local.bro broctl broctl/standalone broctl/auto
+ 0.0  3.5 /opt/bro/bin/bro -i eth0 -U .status -p broctl -p broctl-live -p standalone -p local -p bro local.bro broctl broctl/standalone broctl/auto
+ 0.0  0.0 su - sguil -- /usr/bin/ossec_agent.tcl -o -f /var/ossec/logs/alerts/alerts.log -i 127.0.0.1 -p 5 -c /etc/nsm/ossec/ossec_agent.conf
+ 0.0  0.2 tclsh /usr/bin/ossec_agent.tcl -o -f /var/ossec/logs/alerts/alerts.log -i 127.0.0.1 -p 5 -c /etc/nsm/ossec/ossec_agent.conf
+ 0.0  0.0 tail -n 0 -F /var/ossec/logs/alerts/alerts.log
+ 0.0  0.0 su -s /bin/sh -c exec "$0" "$@" sphinxsearch -- /usr/bin/searchd --nodetach
+ 0.0  0.0 supervising syslog-ng                        
+ 0.0  0.2 /usr/sbin/syslog-ng -p /var/run/syslog-ng.pid
+ 0.0  0.0 /bin/sh -c sh /opt/elsa/contrib/securityonion/contrib/securityonion-elsa-syslog-ng.sh
+ 0.0  0.0 sh /opt/elsa/contrib/securityonion/contrib/securityonion-elsa-syslog-ng.sh
+ 0.0  0.0 [kworker/u2:1]
+ 0.0  0.1 cron
+ 0.0  0.3 su - sguil -- /usr/bin/pcap_agent.tcl -c /etc/nsm/hamad-virtualbox-eth0/pcap_agent.conf
+ 0.0  0.0 [kworker/0:0]
+ 0.0  0.4 tclsh /usr/bin/pcap_agent.tcl -c /etc/nsm/hamad-virtualbox-eth0/pcap_agent.conf
+ 0.0  0.1 /bin/bash /usr/sbin/so-squert-ip2c
+ 0.0  0.3 su - sguil -c cd /var/www/so/squert/.scripts/ && ./ip2c.tcl
+ 0.0  0.2 -su -c cd /var/www/so/squert/.scripts/ && ./ip2c.tcl
+ 0.0 11.4 /usr/sbin/apache2 -k start
+ 0.0 11.4 /usr/sbin/apache2 -k start
+ 0.0 11.4 /usr/sbin/apache2 -k start
+ 0.0 11.4 /usr/sbin/apache2 -k start
+ 0.0 11.4 /usr/sbin/apache2 -k start
+ 0.0  0.3 su - sguil -- /usr/bin/snort_agent.tcl -c /etc/nsm/hamad-virtualbox-eth0/snort_agent-1.conf
+ 0.0  0.4 tclsh /usr/bin/snort_agent.tcl -c /etc/nsm/hamad-virtualbox-eth0/snort_agent-1.conf
+ 0.0  0.0 tail -n 1 -f /nsm/sensor_data/hamad-virtualbox-eth0/snort-1.stats
+ 0.0  0.1 gnome-pty-helper
+ 0.0  0.7 bash
+ 0.0  0.4 sudo sostat
+ 0.0  0.3 /bin/bash /usr/sbin/sostat
+ 0.0  0.2 ps -eo pcpu,pmem,args --sort -pcpu
+
+=========================================================================
+Packets received during last monitoring interval (600 seconds)
+=========================================================================
+
+
+Stats not yet available for eth0.
+
+Please wait until the current monitoring interval has completed.
+
+
+
+=========================================================================
+Packet Loss Stats
+=========================================================================
+
+NIC:
+
+eth0:
+
+RX packets:24507 dropped:0 TX packets:12012 dropped:0
+
+-------------------------------------------------------------------------
+
+pf_ring:
+
+Appl. Name         : <unknown>
+Tot Packets        : 21234
+Tot Pkt Lost       : 0
+
+
+Appl. Name         : snort-cluster-51-socket-0
+Tot Packets        : 6617
+Tot Pkt Lost       : 0
+
+-------------------------------------------------------------------------
+
+IDS Engine (snort) packet drops:
+
+ERROR: No stats found in /nsm/sensor_data/hamad-virtualbox-eth0/snort-1.stats
+-------------------------------------------------------------------------
+
+Bro:
+
+Average packet loss as percent across all Bro workers: 0.000000
+
+        bro: 1523102863.432463 recvd=21244 dropped=0 link=21244
+
+No capture loss reported.
+
+-------------------------------------------------------------------------
+
+Netsniff-NG:
+
+0 Loss
+
+=========================================================================
+PF_RING
+=========================================================================
+PF_RING Version          : 6.6.0 (unknown)
+Total rings              : 2
+
+Standard (non ZC) Options
+Ring slots               : 4096
+Slot version             : 16
+Capture TX               : Yes [RX+TX]
+IP Defragment            : No
+Socket Mode              : Standard
+Cluster Fragment Queue   : 0
+Cluster Fragment Discard : 0
+
+=========================================================================
+Log Archive
+=========================================================================
+/nsm/sensor_data/hamad-virtualbox-eth0/dailylogs/ - 1 days
+16M	.
+16M	./2018-04-07
+
+/nsm/bro/logs/ - 0 days
+24K	.
+20K	./stats
+
+=========================================================================
+Sguil Uncategorized Events
+=========================================================================
+COUNT(*)
+38
+
+=========================================================================
+Sguil events summary for yesterday
+=========================================================================
+Total
+0
+
+=========================================================================
+Top 50 All time Sguil Events
+=========================================================================
+Total
+0
+
+=========================================================================
+Last update
+=========================================================================
+
+=========================================================================
+Available updates
+=========================================================================
+74 packages can be updated.
+68 updates are security updates.
+
+Run 'sudo soup' to install the latest updates.
+
+=========================================================================
+ELSA
+=========================================================================
+Syslog-ng
+Checking for process:
+6445 /usr/sbin/syslog-ng -p /var/run/syslog-ng.pid
+Checking for connection:
+Connection to localhost 514 port [tcp/shell] succeeded!
+
+MySQL
+Checking for process:
+3579 /usr/sbin/mysqld
+Checking for connection:
+Connection to localhost 3306 port [tcp/mysql] succeeded!
+
+Sphinx
+Checking for process:
+6424 su -s /bin/sh -c exec "$0" "$@" sphinxsearch -- /usr/bin/searchd --nodetach
+6429 /usr/bin/searchd --nodetach
+Checking for connection:
+Connection to localhost 9306 port [tcp/*] succeeded!
+
+ELSA Buffers in Queue:
+6
+If this number is consistently higher than 20, please see:
+https://github.com/Security-Onion-Solutions/security-onion/wiki/FAQ#why-does-sostat-show-a-high-number-of-elsa-buffers-in-queue
+
+ELSA Directory Sizes:
+12M	/nsm/elsa/data
+2.1M	/var/lib/mysql/syslog
+32K	/var/lib/mysql/syslog_data
+
+ELSA Index Date Range
+If you don't have at least 2 full days of logs in the Index Date Range,
+then you'll need to increase log_size_limit in /etc/elsa_node.conf.
+MIN(start)	MAX(end)
+2018-04-07 12:02:09	2018-04-07 12:06:15
+
+
+=========================================================================
+Version Information
+=========================================================================
+Ubuntu 14.04.5 LTS
+securityonion-sostat 20120722-0ubuntu0securityonion88
+
